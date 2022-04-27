@@ -83,6 +83,10 @@ img {
     vertical-align: top;
 }
 
+.top-img{
+    width: 100%;
+}
+
 .c-logo {
     height: 32px;
 }
@@ -194,6 +198,23 @@ a:focus {
     color: Crimson;
 }
 
+.c-header__nav {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .c-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        align-items: center;
+    }
+
+    .c-header__nav {
+        display: block;
+    }
+}
+
 /*------------------------------------*\
   #OBJECTS
 \*------------------------------------*/
@@ -203,6 +224,27 @@ a:focus {
     ---
     Creates a horizontal row that stretches the viewport and adds padding around children
 */
+.o-section {
+    display: flow-root;
+}
+
+.o-section+.o-section {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+
+    .o-section--lg+.o-section--lg,
+    .o-section--xl+.o-section--xl {
+        margin-top: 48px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .o-section--xl+.o-section--xl {
+        margin-top: 72px;
+    }
+}
 
 .o-row {
     position: relative;
@@ -210,7 +252,60 @@ a:focus {
     display: flow-root;
 }
 
+.o-list {
+    list-style: none;
+    padding: 0;
+}
+
 /* size modifiers */
+.c-nav {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.c-nav--meta {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.c-nav__link {
+    text-decoration: none;
+    font-weight: 400;
+    padding: 8px 0;
+}
+
+.c-nav__link,
+.c-nav__link:visited,
+.c-nav__link:active {
+    color: #202024;
+}
+
+.c-nav__link--meta,
+.c-nav__link--meta:visited,
+.c-nav__link--meta:active {
+    color: #6C6C75;
+}
+
+.is-selected .c-nav__link,
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #5051db;
+}
+
+.c-nav__link:hover,
+.c-nav__link:focus {
+    color: #5051db;
+}
+
+@media (min-width: 768px) {
+    .c-nav__list {         
+        display: flex;
+        gap: 25px;
+    }
+
+    .c-nav__link {
+    }
+}
 
 .o-row--lg {
     padding: 48px 24px 24px;
@@ -221,12 +316,18 @@ a:focus {
         padding-left: 48px;
         padding-right: 48px;
     }
+    
+    .o-row--md{
+        padding-top: 48px;
+        padding-bottom: 24px;
+    }
 
     .o-row--lg {
         padding-top: 72px;
         padding-bottom: 48px;
     }
 }
+
 
 /*
     Objects: Container
@@ -254,11 +355,17 @@ a:focus {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 
     .o-layout__item {
         flex-basis: 100%;
     }
+
+.u-max-width-sm{
+    display: flex;
+    flex-basis: calc(100% / 2 * 3)
+}
 
 /* gutter modifiers, these affect o-layout__item too */
 
@@ -365,6 +472,15 @@ a:focus {
 /*------------------------------------*\
   #UTILITIES
 \*------------------------------------*/
+/*
+    Utilities: spacing
+    ---
+    Utility classes to put specific margins and paddings onto elements
+*/
+
+.u-pt-clear{
+    padding-top: 0 !important;
+}
 
 /*
     Utilities: max-width

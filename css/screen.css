@@ -49,14 +49,6 @@ html {
     }
 }
 
-.container{
-    max-width: 70em;
-}
-
-.c-logo {}
-
-.c-logo__symbol {}
-
 *,
 *:before,
 *:after {
@@ -89,6 +81,20 @@ html {
 img {
     max-width: 100%;
     vertical-align: top;
+}
+
+.c-logo {
+    height: 32px;
+}
+
+.c-logo__symbol {
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .c-logo {
+        height: 40px;
+    }
 }
 
 /*
@@ -232,7 +238,7 @@ a:focus {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 90em; /* 90 * 16px = 1440px */
+    max-width: 70em; /* 90 * 16px = 1440px */
 }
 
 /*
